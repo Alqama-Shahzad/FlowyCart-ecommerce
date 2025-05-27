@@ -6,6 +6,7 @@
   <p><strong>A premium shopping experience built with modern web technologies</strong></p>
   
   [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen)](https://alqama-shahzad.github.io/FlowyCart-ecommerce/)
+  [![Netlify Preview](https://img.shields.io/badge/Netlify-Preview-00C7B7)](https://flowycart-ecommerce.netlify.app)
   [![React](https://img.shields.io/badge/React-18.x-blue)](https://reactjs.org/)
   [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://www.typescriptlang.org/)
   [![Redux](https://img.shields.io/badge/Redux-Toolkit-purple)](https://redux-toolkit.js.org/)
