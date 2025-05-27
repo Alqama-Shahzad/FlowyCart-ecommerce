@@ -59,13 +59,8 @@ const Catalog = () => {
         {products?.map((product, index) => {
           return (
             <ProductCard
-              id={product.id}
               key={index}
-              title={product.title}
-              price={product.price}
-              category={product.category}
-              description={product.description}
-              image={product.image}
+              product={product}
             />
           );
         })}

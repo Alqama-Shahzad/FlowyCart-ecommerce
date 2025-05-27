@@ -21,7 +21,6 @@ import {
   reduceItemFromCart,
   removeItemFromCart,
 } from "../../features/cart/cartSlice";
-import Button from "../../components/components/Button";
 import Spinner from "../../components/components/Spinner";
 import styles from "./index.module.scss";
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { FiArrowUpRight, FiChevronRight } from "react-icons/fi";
 
 import { collectionImages } from "../../../data/images";

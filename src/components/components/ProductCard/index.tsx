@@ -9,21 +9,14 @@ import { Product } from "../../../types/product";
 import { useAppDispatch } from "../../../app/hooks";
 import { CartItem } from "../../../types/cart";
 import { addToCart } from "../../../features/cart/cartSlice";
-import Button from "../Button";
 import Spinner from "../Spinner";
 
-interface ProductCardProps extends Product {
-  key: number;
+interface ProductCardProps {
+  product: Product;
 }
 
 const ProductCard: FC<ProductCardProps> = ({
-  id,
-  key,
-  title,
-  price,
-  category,
-  description,
-  image,
+  product,
 }) => {
   const dispatch = useAppDispatch();
   const [isLoadingProduct, setIsLoadingProduct] = useState(false);
@@ -35,12 +28,12 @@ const ProductCard: FC<ProductCardProps> = ({
     const cartProduct: CartItem = {
       quantity: 1,
       product: {
-        id: id,
-        title: title,
-        price: price,
-        image: image,
-        description: description,
-        category: category,
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        image: product.image,
+        description: product.description,
+        category: product.category,
       },
     };
 
@@ -59,14 +52,14 @@ const ProductCard: FC<ProductCardProps> = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className={styles.badgeContainer}>
-        <span className={styles.categoryBadge}>{category}</span>
+        <span className={styles.categoryBadge}>{product.category}</span>
         {Math.random() > 0.7 && <span className={styles.saleBadge}>SALE</span>}
       </div>
       
-      <Link to={`/products/${String(id)}`} className={styles.imageContainer}>
+      <Link to={`/products/${String(product.id)}`} className={styles.imageContainer}>
         <motion.img 
-          src={image} 
-          alt={title}
+          src={product.image} 
+          alt={product.title}
           className={styles.productImage}
           initial={{ scale: 1 }}
           animate={{ scale: isHovered ? 1.05 : 1 }}
@@ -103,14 +96,14 @@ const ProductCard: FC<ProductCardProps> = ({
       
       <div className={styles.contentContainer}>
         <div className={styles.details}>
-          <Link to={`/products/${String(id)}`} className={styles.titleLink}>
-            <h3 className={styles.title}>{title}</h3>
+          <Link to={`/products/${String(product.id)}`} className={styles.titleLink}>
+            <h3 className={styles.title}>{product.title}</h3>
           </Link>
           
           <div className={styles.priceRow}>
-            <span className={styles.price}>${price.toFixed(2)}</span>
+            <span className={styles.price}>${product.price.toFixed(2)}</span>
             {Math.random() > 0.7 && (
-              <span className={styles.originalPrice}>${(price * 1.2).toFixed(2)}</span>
+              <span className={styles.originalPrice}>${(product.price * 1.2).toFixed(2)}</span>
             )}
           </div>
         </div>

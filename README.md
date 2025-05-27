@@ -103,6 +103,36 @@ FlowyCart offers a complete e-commerce experience with:
 
 5. Open your browser and visit `http://localhost:5173`
 
+## 🚀 Deployment
+
+### Netlify Deployment
+
+FlowyCart is configured for easy deployment to Netlify. Choose one of these methods:
+
+#### Method 1: GitHub Integration (Recommended)
+
+1. Fork or clone this repository to your GitHub account
+2. Sign up for a [Netlify account](https://app.netlify.com/signup) if you don't have one
+3. Click "New site from Git" in the Netlify dashboard
+4. Select your repository and configure the build settings:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+5. Click "Deploy site"
+
+For detailed instructions, see the [NETLIFY_DEPLOYMENT.md](NETLIFY_DEPLOYMENT.md) file.
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Alqama-Shahzad/FlowyCart-ecommerce)
+
+#### Method 2: Manual Drag-and-Drop Deployment
+
+If you're experiencing issues with the Netlify CLI or GitHub integration:
+
+1. Build your project with `npm run build`
+2. Drag and drop the `dist` folder onto Netlify's dashboard
+3. Configure redirects for SPA routing
+
+For detailed instructions, see the [MANUAL_DEPLOYMENT.md](MANUAL_DEPLOYMENT.md) file.
+
 ## 🏗️ Project Structure
 
 ```

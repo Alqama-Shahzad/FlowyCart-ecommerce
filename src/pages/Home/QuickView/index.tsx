@@ -14,7 +14,7 @@ import { navData } from "../../../data/navItems";
 import { ROUTES } from "../../../constants/Route";
 
 const QuickView = () => {
-  const { products, loading } = useAppSelector((state) => state.product);
+  const { products, isLoading } = useAppSelector((state) => state.product);
   const dispatch = useAppDispatch();
 
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
@@ -117,7 +117,7 @@ const QuickView = () => {
           </div>
         </motion.div>
 
-        {loading ? (
+        {isLoading ? (
           <div className={styles.loadingContainer}>
             <div className={styles.loader}></div>
             <p>Loading products...</p>
@@ -140,13 +140,7 @@ const QuickView = () => {
                     transition={{ duration: 0.5, delay: index * 0.05 }}
                   >
                     <ProductCard
-                      id={product.id}
-                      key={index}
-                      title={product.title}
-                      price={product.price}
-                      category={product.category}
-                      description={product.description}
-                      image={product.image}
+                      product={product}
                     />
                   </motion.div>
                 ))}
