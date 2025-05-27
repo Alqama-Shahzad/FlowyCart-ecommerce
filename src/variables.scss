@@ -1,38 +1,56 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 $font-f-primary: "Nunito", sans-serif;
 $font-f-secondary: "Inter", sans-serif;
 $font-f-title: "Poppins", sans-serif;
 
+$font-w-300: 300;
 $font-w-400: 400;
+$font-w-500: 500;
+$font-w-600: 600;
 $font-w-700: 700;
 $font-w-900: 900;
 
-$c-primary: #000;
-$c-secondary: #fff;
-$c-title: #ff5a1e;
-$c-var: #3d3d3d;
-$c-detail: #8c52ff;
-$c-link-primary: #3d3d3d;
-$c-link-hover: #000;
-$c-subTitle: rgb(183, 177, 177);
+// Modern color palette
+$c-primary: #1a1a2e;
+$c-secondary: #ffffff;
+$c-title: #ff6b6b;
+$c-var: #4a4a4a;
+$c-detail: #6c63ff;
+$c-link-primary: #4a4a4a;
+$c-link-hover: #1a1a2e;
+$c-subTitle: #9e9e9e;
+$c-success: #4caf50;
+$c-error: #f44336;
+$c-warning: #ff9800;
+$c-info: #2196f3;
 
-$back-c-primary: #fff;
-$back-c-detail: radial-gradient(
-  circle at 12.8% 28%,
-  rgb(206, 155, 243) 0%,
-  #8c52ff 90%
-);
-$back-c-highlight: hsla(0, 0%, 5%, 0.2);
-$back-c-button-hover: #000;
-$border-c-var: hsla(0, 0%, 5%, 0.2);
+// Background colors
+$back-c-primary: #ffffff;
+$back-c-secondary: #f9f9f9;
+$back-c-detail: linear-gradient(135deg, #6c63ff 0%, #8c52ff 100%);
+$back-c-highlight: rgba(108, 99, 255, 0.1);
+$back-c-button-hover: #1a1a2e;
+$border-c-var: rgba(0, 0, 0, 0.1);
+
+// Card and element styles
+$card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+$transition-speed: 0.3s;
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
 
 $border-modal: 1px solid $border-c-var;
 
-$ls-primary: 0.05rem;
-$ls-secondary: -0.05rem;
-$ls-link: 0.1rem;
-$ls-button: 0.12rem;
+// Typography
+$ls-primary: 0.02rem;
+$ls-secondary: -0.01rem;
+$ls-link: 0.05rem;
+$ls-button: 0.08rem;
 
-$z-nav: 57;
-$z-modal: 59;
+// Z-index
+$z-nav: 1000;
+$z-modal: 1100;
+$z-tooltip: 1200;
+$z-dropdown: 1300;
