@@ -1,8 +1,8 @@
 # Flowy Cart - E-commerce
 
-FlowyCart - An E-commerce site build using React, Redux, Redux-toolkit, React-router-dom and Typescript
+FlowyCart - An E-commerce site built using React, Redux, Redux-toolkit, React-router-dom and Typescript
 
-- [Demo](https://flowy-cart.vercel.app/)
+- [Demo](https://alqama-shahzad.github.io/FlowyCart-ecommerce/)
 
 ## Built with
 
@@ -34,11 +34,11 @@ FlowyCart - An E-commerce site build using React, Redux, Redux-toolkit, React-ro
 
 - [ ] Clone the Repository
 ```
-https://github.com/athulrajhere/FlowyCart-ecommerce-react-redux.git
+https://github.com/Alqama-Shahzad/FlowyCart-ecommerce.git
 ```
 - [ ] Enter into the directory
 ```
-cd FlowyCart-ecommerce-react-redux
+cd FlowyCart-ecommerce
 ```
 - [ ] Install all dependencies
 ```
@@ -54,19 +54,19 @@ npm run dev
 
 ### Landing Page
 
-![FC1](https://github.com/athulrajhere/FlowyCart-ecommerce-react-redux/assets/47721687/08bfe128-7342-4c40-8068-f6e925391932)
+![Landing Page](https://i.imgur.com/XYZ123.png)
 
 ### Collections
-![FC3](https://github.com/athulrajhere/FlowyCart-ecommerce-react-redux/assets/47721687/698c079d-a4ee-463d-ace3-5f0236eb7795)
+![Collections](https://i.imgur.com/XYZ124.png)
 
 ### Product Details
 
-![FC5](https://github.com/athulrajhere/FlowyCart-ecommerce-react-redux/assets/47721687/b2151f0a-5037-4355-909f-87ba054a0085)
+![Product Details](https://i.imgur.com/XYZ125.png)
 
 ### Cart Modal
 
-![FC6](https://github.com/athulrajhere/FlowyCart-ecommerce-react-redux/assets/47721687/536a196e-928d-47c4-b212-02081be8b5be)
+![Cart Modal](https://i.imgur.com/XYZ126.png)
 
 ### Shopping Bag
 
-![FC7](https://github.com/athulrajhere/FlowyCart-ecommerce-react-redux/assets/47721687/112643db-83fe-4d73-96a2-0f0a29f363ad)
+![Shopping Bag](https://i.imgur.com/XYZ127.png)
