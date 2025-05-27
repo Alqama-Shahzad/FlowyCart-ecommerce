@@ -2,9 +2,11 @@
   min-height: 90vh;
   display: flex;
   align-items: center;
+  padding: 2rem 0;
   
   @media (min-width: 768px) {
     min-height: 90vh;
+    padding: 4rem 0;
   }
   
   .container {
@@ -70,7 +72,7 @@
               left: 0;
               width: 100%;
               height: 0.5rem;
-              background-color: rgba(108, 99, 255, 0.3);
+              background-color: rgba(197, 131, 95, 0.3);
               z-index: -1;
               
               @media (min-width: 768px) {
@@ -158,16 +160,43 @@
         
         .image {
           width: 100%;
-          height: 30rem;
+          height: 35rem;
           border-radius: $border-radius-lg;
           overflow: hidden;
           
           @media (min-width: 768px) {
-            height: 40rem;
+            height: 45rem;
           }
           
           @media (min-width: 1200px) {
-            height: 50rem;
+            height: 55rem;
+          }
+          
+          :global(.swiper-button-prev),
+          :global(.swiper-button-next) {
+            color: $c-secondary;
+            background-color: rgba(0, 0, 0, 0.3);
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            
+            &::after {
+              font-size: 1.8rem;
+            }
+            
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.5);
+            }
+          }
+          
+          :global(.swiper-pagination-bullet) {
+            background-color: $c-secondary;
+            opacity: 0.7;
+          }
+          
+          :global(.swiper-pagination-bullet-active) {
+            opacity: 1;
+            background-color: $c-detail;
           }
         }
         
@@ -188,33 +217,115 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
             display: flex;
             align-items: flex-end;
             padding: 3rem;
             
             .overlayContent {
               color: $c-secondary;
+              max-width: 50rem;
               
               h2 {
                 font-size: 2.4rem;
                 font-weight: $font-w-700;
                 margin-bottom: 1rem;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
                 
                 @media (min-width: 768px) {
-                  font-size: 3rem;
+                  font-size: 3.2rem;
                 }
               }
               
               p {
                 font-size: 1.4rem;
                 max-width: 40rem;
+                margin-bottom: 2rem;
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
                 
                 @media (min-width: 768px) {
                   font-size: 1.6rem;
                 }
               }
+              
+              .overlayButton {
+                .shopButton {
+                  background-color: $c-detail;
+                  color: $c-secondary;
+                  padding: 1rem 2rem;
+                  border-radius: $border-radius-sm;
+                  font-weight: $font-w-600;
+                  font-size: 1.4rem;
+                  transition: all $transition-speed ease;
+                  display: inline-block;
+                  
+                  &:hover {
+                    background-color: darken($c-detail, 10%);
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                  }
+                }
+              }
             }
+          }
+        }
+      }
+      
+      .featuresSection {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 5rem auto 3rem;
+        max-width: 120rem;
+        
+        @media (min-width: 768px) {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 3rem;
+        }
+        
+        .feature {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 2rem;
+          background-color: $back-c-primary;
+          border-radius: $border-radius-md;
+          box-shadow: $card-shadow;
+          transition: all $transition-speed ease;
+          
+          &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+          }
+          
+          .featureIcon {
+            width: 5rem;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            background-color: $back-c-highlight;
+            border-radius: 50%;
+            color: $c-detail;
+            
+            svg {
+              width: 2.4rem;
+              height: 2.4rem;
+            }
+          }
+          
+          h3 {
+            font-size: 1.8rem;
+            font-weight: $font-w-600;
+            margin-bottom: 0.5rem;
+          }
+          
+          p {
+            font-size: 1.4rem;
+            color: $c-var;
+            margin-bottom: 0;
           }
         }
       }

@@ -1,24 +1,19 @@
 export const heroImages = [
   {
-    id: 1,
-    path: "https://ik.imagekit.io/zf3aj3qr3x/tr:w-600/hero-1.jpg?updatedAt=1706911112844 400,https://ik.imagekit.io/zf3aj3qr3x/tr:w-800/hero-1.jpg?updatedAt=1706911112844 800w,https://ik.imagekit.io/zf3aj3qr3x/tr:w-1200/hero-1.jpg?updatedAt=1706911112844 1200w",
-    link: "/catalog/Men",
+    path: "./hero1.jpg",
+    title: "Minimalist Essentials",
+    description: "Timeless pieces for the modern wardrobe"
   },
   {
-    id: 3,
-    path: "https://ik.imagekit.io/zf3aj3qr3x/tr:w-400/hero-3.jpg?updatedAt=1706911111440 400, https://ik.imagekit.io/zf3aj3qr3x/tr:w-800/hero-3.jpg?updatedAt=1706911111440 800w, https://ik.imagekit.io/zf3aj3qr3x/tr:w-1200/hero-3.jpg?updatedAt=1706911111440 1200w",
-    link: "/catalog/Women",
+    path: "./hero2.jpg",
+    title: "Premium Outerwear",
+    description: "Sophisticated styles for every occasion"
   },
   {
-    id: 4,
-    path: "https://ik.imagekit.io/zf3aj3qr3x/tr:w-400/hero-4.jpg?updatedAt=1706911112832 400,https://ik.imagekit.io/zf3aj3qr3x/tr:w-800/hero-4.jpg?updatedAt=1706911112832 800w,https://ik.imagekit.io/zf3aj3qr3x/tr:w-1200/hero-4.jpg?updatedAt=1706911112832 1200w",
-    link: "/catalog/Electronics",
-  },
-  {
-    id: 6,
-    path: "https://ik.imagekit.io/zf3aj3qr3x/tr:w-400/hero-6.jpg?updatedAt=1706911111003 400,https://ik.imagekit.io/zf3aj3qr3x/tr:w-800/hero-6.jpg?updatedAt=1706911111003 800w,https://ik.imagekit.io/zf3aj3qr3x/tr:w-1200/hero-6.jpg?updatedAt=1706911111003 1200w",
-    link: "/catalog/All",
-  },
+    path: "./hero3.jpg",
+    title: "Urban Collection",
+    description: "Express your unique style with our latest designs"
+  }
 ];
 export const collectionImages = [
   {

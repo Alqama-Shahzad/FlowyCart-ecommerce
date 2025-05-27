@@ -1,12 +1,14 @@
 import { useState, FC } from "react";
-import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
-import { Product } from "../../../types/product";
 import { motion } from "framer-motion";
+import { CgShoppingBag } from "react-icons/cg";
+import { FiHeart, FiEye } from "react-icons/fi";
+
+import styles from "./index.module.scss";
+import { Product } from "../../../types/product";
 import { useAppDispatch } from "../../../app/hooks";
 import { CartItem } from "../../../types/cart";
 import { addToCart } from "../../../features/cart/cartSlice";
-import { CgShoppingBag } from "react-icons/cg";
 import Button from "../Button";
 import Spinner from "../Spinner";
 
@@ -24,13 +26,8 @@ const ProductCard: FC<ProductCardProps> = ({
   image,
 }) => {
   const dispatch = useAppDispatch();
-
-  // const [showIcons, setShowIcons] = useState(false);
   const [isLoadingProduct, setIsLoadingProduct] = useState(false);
-
-  // const showActionIcons = (isShow: boolean) => {
-  //   isShow ? setShowIcons(true) : setShowIcons(false);
-  // };
+  const [isHovered, setIsHovered] = useState(false);
 
   const addToCartHandler = () => {
     setIsLoadingProduct(true);
@@ -54,52 +51,86 @@ const ProductCard: FC<ProductCardProps> = ({
 
   return (
     <motion.div
-      id={title}
-      key={key}
-      tabIndex={id}
-      whileHover={{ cursor: "pointer" }}
-      // onMouseEnter={() => showActionIcons(true)}
-      // onMouseLeave={() => showActionIcons(false)}
-      whileTap={{ cursor: "grabbing" }}
-      transition={{
-        ease: "easeInOut",
-        duration: 0.4,
-      }}
+      className={styles.card}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <div className={styles.productItem}>
-        <div className={styles.productPic}>
-          <Link to={`/products/${String(id)}`}>
-            <img src={image} alt={title} />
-          </Link>
-        </div>
+      <div className={styles.badgeContainer}>
+        <span className={styles.categoryBadge}>{category}</span>
+        {Math.random() > 0.7 && <span className={styles.saleBadge}>SALE</span>}
       </div>
-      <div className={styles.productDetailsContainer}>
-        <Link
-          to={`/products/${String(id)}`}
-          className={styles.productDetailsWrapper}
+      
+      <Link to={`/products/${String(id)}`} className={styles.imageContainer}>
+        <motion.img 
+          src={image} 
+          alt={title}
+          className={styles.productImage}
+          initial={{ scale: 1 }}
+          animate={{ scale: isHovered ? 1.05 : 1 }}
+          transition={{ duration: 0.3 }}
+        />
+        
+        <motion.div 
+          className={styles.overlay}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isHovered ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
         >
-          <div className={styles.productDetails}>
-            <div className={styles.productTitle}>
-              <div>{title}</div>
-            </div>
-            <div className={styles.productPrice}>{price}$</div>
+          <div className={styles.quickActions}>
+            <motion.button 
+              className={styles.actionButton}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              title="Quick view"
+            >
+              <FiEye />
+            </motion.button>
+            
+            <motion.button 
+              className={styles.actionButton}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              title="Add to wishlist"
+            >
+              <FiHeart />
+            </motion.button>
           </div>
-        </Link>
-        <motion.div
-          key={key}
-          whileHover={{ zoom: 1.2 }}
-          style={{ height: "100%" }}
-          onClick={() => addToCartHandler()}
-        >
-          <Button className={styles.iconCcontainer}>
-            {isLoadingProduct && <Spinner className={"addToCart"} />}
-            <CgShoppingBag
-              className={`${styles.icon} ${
-                isLoadingProduct && styles.loadingIcon
-              }`}
-            />
-          </Button>
         </motion.div>
+      </Link>
+      
+      <div className={styles.contentContainer}>
+        <div className={styles.details}>
+          <Link to={`/products/${String(id)}`} className={styles.titleLink}>
+            <h3 className={styles.title}>{title}</h3>
+          </Link>
+          
+          <div className={styles.priceRow}>
+            <span className={styles.price}>${price.toFixed(2)}</span>
+            {Math.random() > 0.7 && (
+              <span className={styles.originalPrice}>${(price * 1.2).toFixed(2)}</span>
+            )}
+          </div>
+        </div>
+        
+        <motion.button 
+          className={styles.addToCartButton}
+          onClick={addToCartHandler}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          disabled={isLoadingProduct}
+        >
+          {isLoadingProduct ? (
+            <Spinner className={styles.spinner} />
+          ) : (
+            <>
+              <CgShoppingBag className={styles.icon} />
+              <span className={styles.buttonText}>Add to Cart</span>
+            </>
+          )}
+        </motion.button>
       </div>
     </motion.div>
   );
